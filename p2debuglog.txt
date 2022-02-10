@@ -1,0 +1,62 @@
+gcc -g p2final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x7cf: file p2final.c, line 28.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2final.c:28
+28  {
+(gdb) n
+30    input_side(&x,&y,&z);
+(gdb) s
+input_side (a=0x7fff44508888, b=0x7fff4450888c, c=0x7fff44508890)
+    at p2final.c:4
+4     printf("enter the three sides\n");
+(gdb) n
+enter the three sides
+5     scanf("%d %d %d",a,b,c);
+(gdb) n
+3 4 6
+6   }
+(gdb) n
+main () at p2final.c:31
+31    scalene=check_scalene(x,y,z);
+(gdb) s
+check_scalene (a=3, b=4, c=6) at p2final.c:9
+9     if(a!=b && b!=c && c!=a)
+(gdb) n
+11      return 1;
+(gdb) n
+14  }
+(gdb) n
+main () at p2final.c:32
+32    output(x,y,z,scalene);
+(gdb) s
+output (a=3, b=4, c=6, isscalene=1) at p2final.c:17
+17    if(isscalene == 1)
+(gdb) n
+19      printf(" It is a scalene triangle\n");
+(gdb) n
+ It is a scalene triangle
+26  }
+(gdb) c
+Continuing.
+[Inferior 1 (process 455) exited normally]
+(gdb) 

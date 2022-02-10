@@ -10,10 +10,7 @@ int check_scalene(int a,int b,int c)
   {
     return 1;
   }
-  else
-  {
-    return 0;
-  }
+  return 0;
 }
 void output(int a,int b,int c, int isscalene)
 {
