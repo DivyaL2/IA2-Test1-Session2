@@ -40,14 +40,14 @@ void output(int sum)
   printf("The sum is %d\n",sum);
 
 }
+
 int main()
 {
-  int n,sum;
-  n=input_array_size();
-  int a[n];
-  input_array(n,a);
-  sum=sum_composite_numbers(n,a);
-  output(sum);
+  int length = input_array_size();
+  int data[length];
+  input_array(length, data);
+  int res = sum_composite_numbers(length, data);
+  output(res);
   return 0;
-
 }
+
