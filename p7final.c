@@ -1,34 +1,31 @@
-#include <stdio.h>
-
-int input_number()
+#include<stdio.h>
+#include<math.h>
+struct _triangle
 {
-  int num;
-  printf("Enter the number:\n");
-  scanf("%d", &num);
-  return num;
-}
-
-int is_composite(int n)
+ float base,altitude,area;
+};
+typedef struct _triangle Triangle;
+Triangle input_triangle();
 {
-  for (int i = 2; i <= n/2; i++)
-  {
-    if (n%i == 0)
-      return 1;
-  }
-  return 0;
+  Triangle k;
+  printf("enter the value of k\n");
+  scanf("%f",&k);
+  return k;
 }
-void output(int n, int isComposite)
+Triangle find_area(Triangle b,Triangle h,Triangle *t)
 {
-  if (isComposite)
-    printf("%d is a composite number\n", n);
-  else 
-    printf("%d is not a composite number\n", n);
+  *t=(b * h)/2;
 }
-
+void output(Triangle t)
+{
+  printf("The area of a triangle is %f\n",t);
+}
 int main()
-{
-  int num = input_number();
-  int x = is_composite(num);
-  output(num, x);
+{   
+   Triangle base,altitude,area;
+   base=input_triangle();
+  altitude=input_triangle();
+  find_area(base,altitude,&area);
+  output(area);
   return 0;
-}
+  } 

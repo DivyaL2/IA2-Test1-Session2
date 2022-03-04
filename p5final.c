@@ -21,6 +21,7 @@ int gcd(int a,int b)
         large=small;
         small=rem;
         i=0;
+        
       }
       i++;
     }
