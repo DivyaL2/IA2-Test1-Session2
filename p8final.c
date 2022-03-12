@@ -23,18 +23,22 @@ char str_reverse(char str[20])
       i++;
       j--;
      }
-  return str[j];
-  }  
-void output(char str,char reversea)
+  
+  } 
+ void output( char *reversea)
 {
-  printf("the reverse string of %s is %s \n",str,reversea);
+  
+  printf("The reverse string is %s",reversea );
+
 }
 int main()
 {
-  char str[20],reverse;
+  char str[20];
   input_string(str);
-  reverse=str_reverse(str);
-  output(str,reverse);
+  str_reverse(str);
+  output(str);
+}  
   
   
-}
+  
+
