@@ -28,7 +28,7 @@ char str_reverse(char str[20])
  void output( char *reversea)
 {
   
-  printf("The reverse string is %s",reversea );
+  printf("The reverse string is %s\n",reversea );
 
 }
 int main()
